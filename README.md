@@ -27,8 +27,9 @@ http://localhost:8080
 #API Endpoints
 1. Create a Class
 			POST http://localhost:8080/classes
-			Request Body:
-			json
+   
+   			Request Body:
+   			json
 			{
 			  "name": "Yoga",
 			  "startDate": "2025-01-20",
@@ -42,9 +43,11 @@ http://localhost:8080
 			201 Created: Class created successfully.
 			400 Bad Request: Validation errors such as endDate in the past or capacity less than 1.
    
-2. Get All Classes
+3. Get All Classes
 			GET http://localhost:8080/classes
+   
 			Description: Retrieve all classes and their details.
+   
 			Response Example:
 			json
 			[
@@ -58,8 +61,9 @@ http://localhost:8080
 			  }
 			]
    
-3. Book a Class
+5. Book a Class
 			POST http://localhost:8080/bookings
+   
 			Request Body:
 			json
 			{
@@ -75,25 +79,24 @@ http://localhost:8080
 					Class is full for the requested date.
 					Required fields are missing.
    
-4. Search Bookings
+7. Search Bookings
 			GET http://localhost:8080/bookings
+
+   
 			Query Parameters:
 					memberName (string, optional): Filter by member name.
 					startDate (date, optional): Start of the date range in yyyy-MM-dd format.
 					endDate (date, optional): End of the date range in yyyy-MM-dd format.
    
-			Sample Requests:
-			Search by member:
-			bash
-			GET /bookings?memberName=nagesh
+   
+			Sample Requests: Search by member:
+				GET http://localhost:8080/bookings?memberName=nagesh
    
 			Search by date range:
-			bash
-			GET /bookings?startDate=2025-01-20&endDate=2025-01-25
+				GET http://localhost:8080/bookings?startDate=2025-01-20&endDate=2025-01-25
    
 			Combined search:
-			bash
-			GET /bookings?memberName=John&startDate=2025-01-20&endDate=2025-01-25
+				GET http://localhost:8080/bookings?memberName=John&startDate=2025-01-20&endDate=2025-01-25
    
 			Response Example:
 			json
@@ -107,4 +110,4 @@ http://localhost:8080
 
 	 
 Testing the APIs
-		Using Postman
+Using Postman
